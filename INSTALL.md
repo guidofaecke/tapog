@@ -92,15 +92,17 @@ Instead we install rsyslog, in case we want to send our logs to a log server
 root # emerge app-admin/rsyslog
 ```
 
-Now, after you managed to get your new setup booted and you are logged in, we install a webserver and php.
-Let's get started with typing `ufed` and hit enter.
+Now, after you managed to get your new setup booted and you are logged in, we install a webserver and php.  
+Let's get started 
+```bash
+root # ufed
+``` 
 
 Within the 'Gentoo USE flags editor' type `php` to jump to the php use flag and hit the space bar to select it.
-We will need to do the same to all these use flags: `cli fastcgi fpm`, 
+We will need to do the same to all these use flags: `cli fastcgi fpm`. 
 ...no worries, if some other USE-flags are missing, just fire up `ufed` again, add the flag and try to compile the package again.
 
 Now would be a good time to get our system up-to-date, based on the changes USE-flags.
-Type 
 ```bash
 root # emerge -uDNav --with-bdeps=y @world
 ``` 
@@ -204,3 +206,9 @@ root # rc-update add php-fpm
 ```
 
 Now I will get some basic code written and come back to you when I have something to show.
+
+In case you get bored...
+```bash
+root # eix-sync
+root # emerge -uDNav --with-bdeps=y @world
+```
