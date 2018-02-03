@@ -195,4 +195,12 @@ root # /etc/init.d/php-fpm start
 ```
 Back to the browser and refresh.
 
-There you have it - now I will get some basic code written and come back to you when I have something to show.
+There you have it
+
+In order to start Nginx and php during startup
+```bash
+root # rc-update add nginx
+root # rc-update add php-fpm
+```
+
+Now I will get some basic code written and come back to you when I have something to show.
