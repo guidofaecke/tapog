@@ -1,2 +1,2 @@
 # tapog
-This ain't pfSense on Gentoo
+This ain't pfSense, on Gentoo
