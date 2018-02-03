@@ -31,7 +31,7 @@ root # emerge sys-apps/pciutils sys-apps/usbutils app-portage/gentoolkit app-por
 ```
 Let's continue with the regular install... that's where we pick up at 
 ```bash
-root #cd /usr/src/linux` and `root #cd /usr/src/linux`
+root #cd /usr/src/linux
 ```
 Now, before you run 
 ```bash
