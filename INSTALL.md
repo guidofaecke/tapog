@@ -1,3 +1,5 @@
+# WIP (work in progress)
+
 Start installing Gentoo acording to the manual (x86 in my case [where pfSense dropped the ball on my ancient hardware {VIA C7-D Processor 1500MHz with 4 ethernet ports and some built in crypt muscle}])
 
 At the time when you get to the kernel install "Default: Manual configuration" we change the step `root # emerge --ask sys-apps/pciutils` to:
