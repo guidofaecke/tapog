@@ -156,6 +156,7 @@ Let's find out if we can get something else on the browser
 ```bash
 root # cd /var/www/localhost
 root # mkdir htdocs
+root # cd htdocs
 root # echo "Hello, world!" > index.html
 ```
 Now back to your browser and refresh. You should see `Hello, world!`.
