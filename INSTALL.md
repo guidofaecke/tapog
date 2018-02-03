@@ -48,29 +48,29 @@ root # lsusb
 to grab the essentials for your configuration.
 
 ## For example:
->00:00.0 Host bridge: VIA Technologies, Inc. CX700/VX700 Host Bridge (rev 03)
->00:00.1 Host bridge: VIA Technologies, Inc. CX700/VX700 Host Bridge
->00:00.2 Host bridge: VIA Technologies, Inc. CX700/VX700 Host Bridge
->00:00.3 Host bridge: VIA Technologies, Inc. CX700/VX700 Host Bridge
->00:00.4 Host bridge: VIA Technologies, Inc. CX700/VX700 Host Bridge
->00:00.7 Host bridge: VIA Technologies, Inc. CX700/VX700 Host Bridge
->00:01.0 PCI bridge: VIA Technologies, Inc. VT8237/VX700 PCI Bridge
->00:0f.0 IDE interface: VIA Technologies, Inc. VX800 Serial ATA and EIDE Controller
->00:10.0 USB controller: VIA Technologies, Inc. VT82xx/62xx UHCI USB 1.1 Controller (rev 90)
->00:10.1 USB controller: VIA Technologies, Inc. VT82xx/62xx UHCI USB 1.1 Controller (rev 90)
->00:10.2 USB controller: VIA Technologies, Inc. VT82xx/62xx UHCI USB 1.1 Controller (rev 90)
->00:10.4 USB controller: VIA Technologies, Inc. USB 2.0 (rev 90)
->00:11.0 ISA bridge: VIA Technologies, Inc. CX700/VX700 PCI to ISA Bridge
->00:11.7 Host bridge: VIA Technologies, Inc. CX700/VX700 Internal Module Bus
->00:13.0 Host bridge: VIA Technologies, Inc. CX700/VX700 Host Bridge
->00:13.1 PCI bridge: VIA Technologies, Inc. CX700/VX700 PCI to PCI Bridge
->01:00.0 VGA compatible controller: VIA Technologies, Inc. CX700/VX700 [S3 UniChrome Pro] (rev 03)
->02:04.0 Ethernet controller: Realtek Semiconductor Co., Ltd. RTL-8100/8101L/8139 PCI Fast Ethernet Adapter (rev 10)
->02:05.0 Ethernet controller: VIA Technologies, Inc. VT6120/VT6121/VT6122 Gigabit Ethernet Adapter (rev 11)
->02:06.0 Ethernet controller: Realtek Semiconductor Co., Ltd. RTL-8100/8101L/8139 PCI Fast Ethernet Adapter (rev 10)
->02:07.0 Ethernet controller: Realtek Semiconductor Co., Ltd. RTL-8100/8101L/8139 PCI Fast Ethernet Adapter (rev 10)
->02:08.0 FireWire (IEEE 1394): VIA Technologies, Inc. VT6306/7/8 [Fire II(M)] IEEE 1394 OHCI Controller (rev 80)
->80:01.0 Audio device: VIA Technologies, Inc. VT8237A/VT8251 HDA Controller (rev 10)
+>00:00.0 Host bridge: VIA Technologies, Inc. CX700/VX700 Host Bridge (rev 03)  
+>00:00.1 Host bridge: VIA Technologies, Inc. CX700/VX700 Host Bridge  
+>00:00.2 Host bridge: VIA Technologies, Inc. CX700/VX700 Host Bridge  
+>00:00.3 Host bridge: VIA Technologies, Inc. CX700/VX700 Host Bridge  
+>00:00.4 Host bridge: VIA Technologies, Inc. CX700/VX700 Host Bridge  
+>00:00.7 Host bridge: VIA Technologies, Inc. CX700/VX700 Host Bridge  
+>00:01.0 PCI bridge: VIA Technologies, Inc. VT8237/VX700 PCI Bridge  
+>00:0f.0 IDE interface: VIA Technologies, Inc. VX800 Serial ATA and EIDE Controller  
+>00:10.0 USB controller: VIA Technologies, Inc. VT82xx/62xx UHCI USB 1.1 Controller (rev 90)  
+>00:10.1 USB controller: VIA Technologies, Inc. VT82xx/62xx UHCI USB 1.1 Controller (rev 90)  
+>00:10.2 USB controller: VIA Technologies, Inc. VT82xx/62xx UHCI USB 1.1 Controller (rev 90)  
+>00:10.4 USB controller: VIA Technologies, Inc. USB 2.0 (rev 90)  
+>00:11.0 ISA bridge: VIA Technologies, Inc. CX700/VX700 PCI to ISA Bridge  
+>00:11.7 Host bridge: VIA Technologies, Inc. CX700/VX700 Internal Module Bus  
+>00:13.0 Host bridge: VIA Technologies, Inc. CX700/VX700 Host Bridge  
+>00:13.1 PCI bridge: VIA Technologies, Inc. CX700/VX700 PCI to PCI Bridge  
+>01:00.0 VGA compatible controller: VIA Technologies, Inc. CX700/VX700 [S3 UniChrome Pro] (rev 03)  
+>02:04.0 Ethernet controller: Realtek Semiconductor Co., Ltd. RTL-8100/8101L/8139 PCI Fast Ethernet Adapter (rev 10)  
+>02:05.0 Ethernet controller: VIA Technologies, Inc. VT6120/VT6121/VT6122 Gigabit Ethernet Adapter (rev 11)  
+>02:06.0 Ethernet controller: Realtek Semiconductor Co., Ltd. RTL-8100/8101L/8139 PCI Fast Ethernet Adapter (rev 10)  
+>02:07.0 Ethernet controller: Realtek Semiconductor Co., Ltd. RTL-8100/8101L/8139 PCI Fast Ethernet Adapter (rev 10)  
+>02:08.0 FireWire (IEEE 1394): VIA Technologies, Inc. VT6306/7/8 [Fire II(M)] IEEE 1394 OHCI Controller (rev 80)  
+>80:01.0 Audio device: VIA Technologies, Inc. VT8237A/VT8251 HDA Controller (rev 10)  
 
 With the above info (from your system) you should be able to track down the hardware you need to compile into your kernel.
 
