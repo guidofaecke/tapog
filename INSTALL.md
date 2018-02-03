@@ -22,7 +22,8 @@ As in my case, don't forget to disable the 64-bit support in `make menuconfig`, 
 Follow all the instructions of the manual until after `make && make modules install`.
 This might take a while (one slow core in my use case)... grab a couple beers or a pizza, watch some episodes of your favorite TV show/DVD collection/DVR or go back to your smoker and check on them ribs/brisket... or go to bed and check the result in the morning... or whatever you like to do.
 
-A couple steps later you wil read `Optional: Installing firmware`. Just install it.
+A couple steps later you wil read `Optional: Installing firmware`. Just install it.  
+There is always a piece of hardware that might need it (NIC/SCSI/CPU/GPU/Audio/USB, you name it..)
 
 When the time comes to install the logger as stated as ``, use `emerge app-admin/rsyslog` instead.
 
