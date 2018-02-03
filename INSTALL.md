@@ -23,3 +23,15 @@ This might take a while (one slow core in my use case)... grab a couple beers or
 A couple steps later you wil read `Optional: Installing firmware`. Just install it.
 
 When the time comes to install the logger as stated as ``, use `emerge app-admin/rsyslog` instead.
+
+Now, after you managed to get your new setup booted and you are logged in, we install a webserver and php.
+Let's get started with typing `ufed` and hit enter.
+Within the 'Gentoo USE flags editor' type `php` to jump to the php use flag and hit the space bar to select it.
+We will need to do the same to all these use flags: `cli fastcgi fpm`, 
+...no worries, if some other USE-flags are missing, just fire up `ufed` again, add the flag and try to compile the package again.
+
+Now would be a good time to get our system up-to-date, based on the changes USE-flags.
+Type `emerge -uDNav --with-bdeps=y @world` on the command ine and hit enter.
+
+...and again, based on your hardware, that might take a while!!!
+
