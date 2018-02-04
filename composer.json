@@ -1,20 +1,18 @@
 {
-	"name" : "tapog/tapog",
-	"description" : "Linux Firewall by Emcent",
-	"license" : "BSD-3-Clause",
-	"minimum-stability" : "dev",
-	"authors" : [{
-			"name" : "Guido Faecke",
-			"email" : "gfacke@gmail.com"
-		}
-	],
-	"require": {
-		"zendframework/zend-diactoros": "^1.7@dev",
-		"zendframework/zend-stratigility": "^2.1@dev",
-		"http-interop/http-middleware": "^0.5.0",
-		"roave/security-advisories": "dev-master",
-		"http-interop/http-server-middleware": "^1.0@dev",
-		"psr/http-server-middleware": "^1.0@dev",
-		"psr/http-server-handler": "^1.0@dev"
-	}
+    "name" : "tapog/tapog",
+    "description" : "Linux Firewall by Emcent",
+    "license" : "BSD-3-Clause",
+    "minimum-stability" : "dev",
+    "authors" : [{
+            "name" : "Guido Faecke",
+            "email" : "gfacke@gmail.com"
+        }
+    ],
+    "require" : {
+        "zendframework/zend-diactoros" : "^1.7@dev",
+        "zendframework/zend-stratigility" : "^2.1@dev",
+        "roave/security-advisories" : "dev-master",
+        "psr/http-server-middleware" : "^1.0@dev",
+        "psr/http-server-handler" : "^1.0@dev"
+    }
 }
