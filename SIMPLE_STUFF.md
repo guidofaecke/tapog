@@ -14,5 +14,5 @@ I was thinking about Doctrine at that point, however, it might be overkill, sinc
 # However
 I want to point out some good and influencel people that screwed up my coding style and thinking...
 - Matthew - https://github.com/weierophinney - for all the good work
-- Enrico - https://github.com/ezimuel/zimuel.it - ALways good toalking to you
+- Enrico - https://github.com/ezimuel - ALways good talking to you
 - Marco - aka. Ocramius - https://github.com/Ocramius - You are nuts!
