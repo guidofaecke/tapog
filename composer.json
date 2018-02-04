@@ -1,0 +1,11 @@
+{
+	"name" : "tapog/tapog",
+	"description" : "Linux Firewall by Emcent",
+	"license" : "BSD-3-Clause",
+	"minimum-stability" : "dev",
+	"authors" : [{
+			"name" : "Guido Faecke",
+			"email" : "gfacke@gmail.com"
+		}
+	]
+}
