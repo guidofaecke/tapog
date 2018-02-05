@@ -9,3 +9,5 @@
 - update packages
 - css/scss/sass
 - jquery/angular
+- (realtime) stats (rrd)
+- CLI
