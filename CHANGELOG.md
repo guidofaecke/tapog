@@ -2,9 +2,9 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
-## untagged version
+## First untagged commit
 
-Initial install
+Initial commit
 
 ### Added
 
