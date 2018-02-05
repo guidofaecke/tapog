@@ -11,3 +11,4 @@
 - jquery/angular
 - (realtime) stats (rrd)
 - CLI
+- snort
