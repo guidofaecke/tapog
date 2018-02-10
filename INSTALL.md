@@ -214,7 +214,7 @@ root # emerge -uDNav --with-bdeps=y @world
 ```
 
 A new week, a couple more hours I could spend on this little project!
-I forgot about the importance of `sudo`. A lot of settings and comand executions are more or less impossible without the help of `sudo`.
+I forgot about the importance of `sudo`. A lot of settings and command executions are more or less impossible without the help of `sudo`, unless everything runs under `root` - bad idea.
 
 It is safe to say that we can install `sudo` without messing with the USE-Flags, for now.
 To do so:
@@ -223,14 +223,15 @@ root # emerge app-admin/sudo
 ```
 With instaling `sudo`, we introduced a new file to `/etc` called `sudoers`.
 Within this file we can get all creative. However, we try to be as conservative as we can.
-Therefore, let's switch gears real quick. We know that all the commands we need to execute are needed to be executed via PHP...
+Therefore, let's switch gears real quick.
+We know that all the commands we need to run are executed via PHP...
 Good, let's change the PHP-FPM user from `nobody` to something more meaningful, let's say `tapog` !?!?
 
 What do we need to do to achive that?
 
 Oh, before I forget, here is another good companion to install:
 ```bash
-emerge app-misc/mc
+root # emerge app-misc/mc
 ```
 This is not neccessrly for production, but helps during the `dev` stage.
 
@@ -240,8 +241,8 @@ Assuming you settled on `tapog`:
 root # groupadd tapog
 root # useradd tapog -g tapog
 ```
-That should fix the first problem.
-So, how do we get php to ru nunder the new userna,e `tapog`?
+That should fix the first problem.  
+So, how do we get php to run under the new user `tapog`?  
 Open `/etc/php/fpm-php7.1/fpm.d/www.conf` in your editor of choice and change
 ```bash
 ; Unix user/group of processes
