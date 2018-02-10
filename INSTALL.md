@@ -273,3 +273,44 @@ tapog    30353  0.0  0.9 157160  4688 ?        S    22:08   0:00 php-fpm: pool w
 tapog    30354  0.0  0.9 157160  4688 ?        S    22:08   0:00 php-fpm: pool www
 ```
 Sounds better than `nobody`, don't you think?
+
+Just to make sure, give or browser a quick refresh and see if `Hello, world!` is still avilable.
+
+Oh, in case you wonder why we are still on `html` and not on `php`, let's fix that real quick.
+Lets change some settings. Open `/etc/nginx/nginx.conf` in your favorite editor and go from
+``` bash
+        sendfile on;
+        tcp_nopush on;
+        tcp_nodelay on;
+
+        keepalive_timeout 75 20;
+
+        ignore_invalid_headers on;
+
+        index index.html;
+
+        server {
+                listen 0.0.0.0;
+```
+to
+```bash
+        sendfile on;
+        tcp_nopush on;
+        tcp_nodelay on;
+
+        keepalive_timeout 75 20;
+
+        ignore_invalid_headers on;
+
+        index index.php index.html;
+
+        server {
+                listen 0.0.0.0;
+```
+If you feel secure enough, remove index.html. Personally, I keep it as a backup, for now... we are still in DEV mode.
+A quick restart of Nginx and a refresh within the browser should give you `phpinfo()`.
+```bash
+root # /etc/init.d/nginx restart
+```
+
+I think that's it for today (02/09/2018)...
