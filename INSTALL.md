@@ -3,7 +3,7 @@
 *Start installing Gentoo acording to the manual (x86 in my case [where pfSense dropped the ball on my ancient hardware {VIA C7-D Processor 1500MHz with 4 ethernet ports and some built in crypt muscle}])*
 
 At the time when you get to the kernel install "Default: Manual configuration" we change the step
- 
+
 ```bash
 root # emerge --ask sys-apps/pciutils
 ```
@@ -29,52 +29,52 @@ Almost back to normal
 ```bash
 root # emerge sys-apps/pciutils sys-apps/usbutils app-portage/gentoolkit app-portage/ufed
 ```
-Let's continue with the regular install... that's where we pick up at 
+Let's continue with the regular install... that's where we pick up at
 ```bash
 root #cd /usr/src/linux
 ```
-Now, before you run 
+Now, before you run
 ```bash
 root # make menuconfig
 ```
-run 
+run
 ```bash
 root # lspci
-``` 
-and 
+```
+and
 ```bash
 root # lsusb
-``` 
+```
 to grab the essentials for your configuration.
 
 ## For example:
->00:00.0 Host bridge: VIA Technologies, Inc. CX700/VX700 Host Bridge (rev 03)  
->00:00.1 Host bridge: VIA Technologies, Inc. CX700/VX700 Host Bridge  
->00:00.2 Host bridge: VIA Technologies, Inc. CX700/VX700 Host Bridge  
->00:00.3 Host bridge: VIA Technologies, Inc. CX700/VX700 Host Bridge  
->00:00.4 Host bridge: VIA Technologies, Inc. CX700/VX700 Host Bridge  
->00:00.7 Host bridge: VIA Technologies, Inc. CX700/VX700 Host Bridge  
->00:01.0 PCI bridge: VIA Technologies, Inc. VT8237/VX700 PCI Bridge  
->00:0f.0 IDE interface: VIA Technologies, Inc. VX800 Serial ATA and EIDE Controller  
->00:10.0 USB controller: VIA Technologies, Inc. VT82xx/62xx UHCI USB 1.1 Controller (rev 90)  
->00:10.1 USB controller: VIA Technologies, Inc. VT82xx/62xx UHCI USB 1.1 Controller (rev 90)  
->00:10.2 USB controller: VIA Technologies, Inc. VT82xx/62xx UHCI USB 1.1 Controller (rev 90)  
->00:10.4 USB controller: VIA Technologies, Inc. USB 2.0 (rev 90)  
->00:11.0 ISA bridge: VIA Technologies, Inc. CX700/VX700 PCI to ISA Bridge  
->00:11.7 Host bridge: VIA Technologies, Inc. CX700/VX700 Internal Module Bus  
->00:13.0 Host bridge: VIA Technologies, Inc. CX700/VX700 Host Bridge  
->00:13.1 PCI bridge: VIA Technologies, Inc. CX700/VX700 PCI to PCI Bridge  
->01:00.0 VGA compatible controller: VIA Technologies, Inc. CX700/VX700 [S3 UniChrome Pro] (rev 03)  
->02:04.0 Ethernet controller: Realtek Semiconductor Co., Ltd. RTL-8100/8101L/8139 PCI Fast Ethernet Adapter (rev 10)  
->02:05.0 Ethernet controller: VIA Technologies, Inc. VT6120/VT6121/VT6122 Gigabit Ethernet Adapter (rev 11)  
->02:06.0 Ethernet controller: Realtek Semiconductor Co., Ltd. RTL-8100/8101L/8139 PCI Fast Ethernet Adapter (rev 10)  
->02:07.0 Ethernet controller: Realtek Semiconductor Co., Ltd. RTL-8100/8101L/8139 PCI Fast Ethernet Adapter (rev 10)  
->02:08.0 FireWire (IEEE 1394): VIA Technologies, Inc. VT6306/7/8 [Fire II(M)] IEEE 1394 OHCI Controller (rev 80)  
->80:01.0 Audio device: VIA Technologies, Inc. VT8237A/VT8251 HDA Controller (rev 10)  
+>00:00.0 Host bridge: VIA Technologies, Inc. CX700/VX700 Host Bridge (rev 03)
+>00:00.1 Host bridge: VIA Technologies, Inc. CX700/VX700 Host Bridge
+>00:00.2 Host bridge: VIA Technologies, Inc. CX700/VX700 Host Bridge
+>00:00.3 Host bridge: VIA Technologies, Inc. CX700/VX700 Host Bridge
+>00:00.4 Host bridge: VIA Technologies, Inc. CX700/VX700 Host Bridge
+>00:00.7 Host bridge: VIA Technologies, Inc. CX700/VX700 Host Bridge
+>00:01.0 PCI bridge: VIA Technologies, Inc. VT8237/VX700 PCI Bridge
+>00:0f.0 IDE interface: VIA Technologies, Inc. VX800 Serial ATA and EIDE Controller
+>00:10.0 USB controller: VIA Technologies, Inc. VT82xx/62xx UHCI USB 1.1 Controller (rev 90)
+>00:10.1 USB controller: VIA Technologies, Inc. VT82xx/62xx UHCI USB 1.1 Controller (rev 90)
+>00:10.2 USB controller: VIA Technologies, Inc. VT82xx/62xx UHCI USB 1.1 Controller (rev 90)
+>00:10.4 USB controller: VIA Technologies, Inc. USB 2.0 (rev 90)
+>00:11.0 ISA bridge: VIA Technologies, Inc. CX700/VX700 PCI to ISA Bridge
+>00:11.7 Host bridge: VIA Technologies, Inc. CX700/VX700 Internal Module Bus
+>00:13.0 Host bridge: VIA Technologies, Inc. CX700/VX700 Host Bridge
+>00:13.1 PCI bridge: VIA Technologies, Inc. CX700/VX700 PCI to PCI Bridge
+>01:00.0 VGA compatible controller: VIA Technologies, Inc. CX700/VX700 [S3 UniChrome Pro] (rev 03)
+>02:04.0 Ethernet controller: Realtek Semiconductor Co., Ltd. RTL-8100/8101L/8139 PCI Fast Ethernet Adapter (rev 10)
+>02:05.0 Ethernet controller: VIA Technologies, Inc. VT6120/VT6121/VT6122 Gigabit Ethernet Adapter (rev 11)
+>02:06.0 Ethernet controller: Realtek Semiconductor Co., Ltd. RTL-8100/8101L/8139 PCI Fast Ethernet Adapter (rev 10)
+>02:07.0 Ethernet controller: Realtek Semiconductor Co., Ltd. RTL-8100/8101L/8139 PCI Fast Ethernet Adapter (rev 10)
+>02:08.0 FireWire (IEEE 1394): VIA Technologies, Inc. VT6306/7/8 [Fire II(M)] IEEE 1394 OHCI Controller (rev 80)
+>80:01.0 Audio device: VIA Technologies, Inc. VT8237A/VT8251 HDA Controller (rev 10)
 
 With the above info (from your system) you should be able to track down the hardware you need to compile into your kernel.
 
-As in my case, don't forget to disable the 64-bit support in `make menuconfig`, otherwise you end up with `error: CPU you selected does not support x86-64 instruction set`. 
+As in my case, don't forget to disable the 64-bit support in `make menuconfig`, otherwise you end up with `error: CPU you selected does not support x86-64 instruction set`.
 Everybody else, make sure you have the 64-bit support enabled... don't want to hear about wasting resources.
 Yes, I know, ancient hardware, but I always enjoy a good challenge.
 
@@ -92,20 +92,20 @@ Instead we install rsyslog, in case we want to send our logs to a log server
 root # emerge app-admin/rsyslog
 ```
 
-Now, after you managed to get your new setup booted and you are logged in, we install a webserver and php.  
-Let's get started 
+Now, after you managed to get your new setup booted and you are logged in, we install a webserver and php.
+Let's get started
 ```bash
 root # ufed
-``` 
+```
 
 Within the 'Gentoo USE flags editor' type `php` to jump to the php use flag and hit the space bar to select it.
-We will need to do the same to all these use flags: `cli fastcgi fpm`. 
+We will need to do the same to all these use flags: `cli fastcgi fpm`.
 ...no worries, if some other USE-flags are missing, just fire up `ufed` again, add the flag and try to compile the package again.
 
 Now would be a good time to get our system up-to-date, based on the changes USE-flags.
 ```bash
 root # emerge -uDNav --with-bdeps=y @world
-``` 
+```
 on the command line and hit enter.
 
 ...and again, based on your hardware, that might take a while!!!
@@ -113,10 +113,10 @@ on the command line and hit enter.
 Finally we can install some php
 ```bash
 root # emerge dev-lang/php
-```  
+```
 
-I know, I know... what about the other USE-flags we need?  
-We get there, while we build the system!  
+I know, I know... what about the other USE-flags we need?
+We get there, while we build the system!
 This document is still work in progress and will change over time.
 
 Let's take a look
@@ -150,7 +150,7 @@ Let's find out if we can start Nginx and if it responds.
 root # /etc/init.d/nginx start
 ```
 
-Open a web browser (on a different machine/phone) and browse to 
+Open a web browser (on a different machine/phone) and browse to
 [http://<myfirewall_or_ipaddress>](http://localhost) <- change `myfirewall` to whatever your DNS understands or the IP address you used.
 As long as we see something that looks like a regular web server response with a 404 from nginx, we are good.
 
@@ -178,12 +178,12 @@ Open `/etc/nginx/nginx.conf` in your editor of choice and change the server sect
 server {
                 listen 0.0.0.0;
                 server_name localhost;
- 
+
                 access_log /var/log/nginx/localhost.access_log main;
                 error_log /var/log/nginx/localhost.error_log info;
- 
+
                 root /var/www/localhost/htdocs;
- 
+
                 location ~ .php$ {
                         fastcgi_pass 127.0.0.1:9000;
                         include fastcgi.conf;
@@ -212,3 +212,63 @@ In case you get bored...
 root # eix-sync
 root # emerge -uDNav --with-bdeps=y @world
 ```
+
+A new week, a couple more hours I could spend on this little project!
+I forgot about the importance of `sudo`. A lot of settings and comand executions are more or less impossible without the help of `sudo`.
+
+It is safe to say that we can install `sudo` without messing with the USE-Flags, for now.
+To do so:
+```bash
+root # emerge app-admin/sudo
+```
+With instaling `sudo`, we introduced a new file to `/etc` called `sudoers`.
+Within this file we can get all creative. However, we try to be as conservative as we can.
+Therefore, let's switch gears real quick. We know that all the commands we need to execute are needed to be executed via PHP...
+Good, let's change the PHP-FPM user from `nobody` to something more meaningful, let's say `tapog` !?!?
+
+What do we need to do to achive that?
+
+Oh, before I forget, here is another good companion to install:
+```bash
+emerge app-misc/mc
+```
+This is not neccessrly for production, but helps during the `dev` stage.
+
+Ok, back to `sudo` and name changes...
+Assuming you settled on `tapog`:
+```bash
+root # groupadd tapog
+root # useradd tapog -g tapog
+```
+That should fix the first problem.
+So, how do we get php to ru nunder the new userna,e `tapog`?
+Open `/etc/php/fpm-php7.1/fpm.d/www.conf` in your editor of choice and change
+```bash
+; Unix user/group of processes
+; Note: The user is mandatory. If the group is not set, the default user's group
+;   will be used.
+user = nobody
+group = nobody
+
+; The address on which to accept FastCGI requests.
+```
+to
+```bash
+; Unix user/group of processes
+; Note: The user is mandatory. If the group is not set, the default user's group
+;   will be used.
+user = tapog
+group = tapog
+
+; The address on which to accept FastCGI requests.
+```
+To make sure it worked
+```bash
+root # /etc/init.d/php-fpm restart
+```
+```bash
+root # ps aux | grep pgp
+tapog    30353  0.0  0.9 157160  4688 ?        S    22:08   0:00 php-fpm: pool www
+tapog    30354  0.0  0.9 157160  4688 ?        S    22:08   0:00 php-fpm: pool www
+```
+Sounds better than `nobody`, don't you think?
