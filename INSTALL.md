@@ -225,7 +225,7 @@ With instaling `sudo`, we introduced a new file to `/etc` called `sudoers`.
 Within this file we can get all creative. However, we try to be as conservative as we can.
 Therefore, let's switch gears real quick.
 We know that all the commands we need to run are executed via PHP...
-Good, let's change the PHP-FPM user from `nobody` to something more meaningful, let's say `tapog` !?!?
+Good, let's change the PHP-FPM user from `nobody` to something more meaningful, let's say `tapog`...
 
 What do we need to do to achive that?
 
@@ -233,7 +233,7 @@ Oh, before I forget, here is another good companion to install:
 ```bash
 root # emerge app-misc/mc
 ```
-This is not neccessrly for production, but helps during the `dev` stage.
+This is not neccessarly for production, but helps during the `dev` stage.
 
 Ok, back to `sudo` and name changes...
 Assuming you settled on `tapog`:
@@ -241,8 +241,8 @@ Assuming you settled on `tapog`:
 root # groupadd tapog
 root # useradd tapog -g tapog
 ```
-That should fix the first problem.  
-So, how do we get php to run under the new user `tapog`?  
+That should fix the first problem.
+So, how do we get php to run under the new user `tapog`?
 Open `/etc/php/fpm-php7.1/fpm.d/www.conf` in your editor of choice and change
 ```bash
 ; Unix user/group of processes
